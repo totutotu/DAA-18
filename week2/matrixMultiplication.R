@@ -10,7 +10,9 @@ B = matrix(
   ncol=4
 )
 
+print('Matrix 1:')
 print(A)
+print('Matrix 2:')
 print(B)
 
 matrixMultiplication <- function(A, B) {
@@ -25,7 +27,7 @@ matrixMultiplication <- function(A, B) {
   } else {
     C[c(1:(n/2)), c(1:(n/2))] = matrixMultiplication(A[c(1:(n/2)),c(1:(n/2))], B[c(1:(n/2)),c(1:(n/2))]) +
       matrixMultiplication(A[c(1:(n/2)),c(((n/2)+1):n)], B[c(((n/2)+1):n),c(1:(n/2))])
-      
+
     C[c(1:(n/2)),c(((n/2)+1):n)] = matrixMultiplication(A[c(1:(n/2)),c(1:(n/2))], B[c(1:(n/2)),c(((n/2)+1):n)]) +
       matrixMultiplication(A[c(1:(n/2)),c(((n/2)+1):n)], B[c(((n/2)+1):n),c(((n/2)+1):n)])
 
@@ -38,4 +40,5 @@ matrixMultiplication <- function(A, B) {
   C
 }
 
+print('Product of the matrices:')
 print(matrixMultiplication(A, B))
